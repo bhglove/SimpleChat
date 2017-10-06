@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">Simple Chat</string>
+    <string name="android_client_id">108159795146-fv1qn05h2q9kk2p4usd4i9k8mar2agph.apps.googleusercontent.com</string>
+    <string name="server_client_id">108159795146-rhcdc965aa9uphdiod3l9o20fjlv8bgr.apps.googleusercontent.com</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pusher_app_id">370639</string>
+    <string name="pusher_app_key">bf9df3862ca7158be9a7</string>
+    <string name="pusher_app_cluster">us2</string>
+
+    <string name="main_welcome">Welcome to Simple Chat!</string>
+    <string name="main_description">Your new favorite place to chat with your friends.  Log in to get started!</string>
+    <string name="main_login_button">Start Chatting!</string>
+    <string name="login_welcome">Login to Simple Chat!</string>
 </resources>

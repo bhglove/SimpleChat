@@ -11,10 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import bhglove.cpsc482.edu.simplechat.R;
 import bhglove.cpsc482.edu.simplechat.android.CachePhotos;
+import bhglove.cpsc482.edu.simplechat.android.SharedPreferences;
 import bhglove.cpsc482.edu.simplechat.android.TakePhoto;
+import bhglove.cpsc482.edu.simplechat.model.User;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -87,10 +90,21 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_profile, container, false);
 
+        User user = SharedPreferences.getDefaultUser(view.getContext());
+
+        if(user != null){
+            mParam2 = user.getFirstName() + " " + user.getLastName();
+        }
+
         if (mParam1 != null) {
             ImageView mImage = (ImageView) view.findViewById(R.id.imageView3);
             CachePhotos photos = CachePhotos.getInstance();
             photos.loadBitmap(mParam1, mImage);
+        }
+
+        if(mParam2 != null){
+            TextView textView = (TextView) view.findViewById(R.id.profile_name);
+            textView.setText(mParam2);
         }
 
         ImageButton button = (ImageButton) view.findViewById(R.id.photoButton);

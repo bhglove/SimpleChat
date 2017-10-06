@@ -16,7 +16,6 @@ import java.util.ArrayList;
 
 import bhglove.cpsc482.edu.simplechat.R;
 import bhglove.cpsc482.edu.simplechat.adapter.ConversationAdapter;
-import bhglove.cpsc482.edu.simplechat.controller.Controller;
 import bhglove.cpsc482.edu.simplechat.model.Conversation;
 
 /**
@@ -82,7 +81,7 @@ public class ConversationListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getContext(), ChatActivity.class);
-                intent.putExtra("User", conversations.get(i).getUser());
+                //intent.putExtra("User", conversations.get(i).getUser());
                 startActivity(intent);
             }
         });
@@ -99,10 +98,6 @@ public class ConversationListFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
-        Controller controller = Controller.getInstance(context);
-        conversations = controller.getConversationList();
-        Log.d("ConversationFragment", "Size " + conversations.size());
 
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;

@@ -1,40 +1,48 @@
 package bhglove.cpsc482.edu.simplechat.model;
 
-import java.text.DateFormat;
-import java.util.Date;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by Benjamin on 10/22/16.
  */
 
 public class Message {
-    protected int id;
+    @SerializedName("id")
+    protected int _id;
+    @SerializedName("date")
     private String date;
+    @SerializedName("sender")
     private int sender;
+    @SerializedName("receiver")
     private int receiver;
-    private String content;
+    @SerializedName("message")
+    private String message;
     protected String lastSync;
     private boolean sent = false;
 
-    public Message(User sender, User receiver, String content){
-        this.sender = sender.id;
-        this.receiver = receiver.id;
-        this.content = content;
+    public Message(User sender, User receiver, String message){
+        this.sender = sender.get_id();
+        this.receiver = receiver.get_id();
+        this.message = message;
     }
 
     /**
-     * Constructor that is only avaiable to the database class, so that the id or the date is not
+     * Constructor that is only avaiable to the database class, so that the _id or the date is not
      * mutable.
-     * @param id
+     * @param _id
      * @param sender
      * @param receiver
-     * @param content
+     * @param message
      * @param date
      */
-    protected Message(int id, User sender, User receiver, String content, String date){
-        this(sender, receiver, content);
-        this.id = id;
+    protected Message(int _id, User sender, User receiver, String message, String date){
+        this(sender, receiver, message);
+        this._id = _id;
         this.date = date;
+    }
+
+    public int get_id(){
+        return this._id;
     }
 
     public int getSender(){
@@ -49,8 +57,8 @@ public class Message {
         return this.date;
     }
 
-    public String getContent(){
-        return this.content;
+    public String getMessage(){
+        return this.message;
     }
 
     protected void setSentStatus(boolean value){
@@ -66,9 +74,9 @@ public class Message {
         return isSent();
     }
     public String checkInstance() {
-        return "Message: My id is: " + this.id
+        return "Message: My _id is: " + this._id
                 + "\n Sent from " + this.sender + " Received by " + this.receiver
-                + "\n Content: " + this.content
+                + "\n Content: " + this.message
                 + "\n Date: " + this.date + "\n";
     }
 }

@@ -1,6 +1,9 @@
 package bhglove.cpsc482.edu.simplechat.model;
 
 import java.io.Serializable;
+import com.google.gson.*;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 /**
@@ -8,27 +11,87 @@ import java.util.ArrayList;
  */
 
 public class User implements Serializable{
-    protected int id;
-    private String name;
-    private String number;
+    @SerializedName("_id")
+    private int _id;
+    @SerializedName("first_name")
+    private String firstName;
+    @SerializedName("last_name")
+    private String lastName;
+    @SerializedName("email")
+    private String email;
+    @SerializedName("phone")
+    private String phone;
+    @SerializedName("external_id")
+    private String externalId;
+    @SerializedName("photo")
+    private String photo;
 
-
-    public User(String name, String number){
-        this.name = name;
-        this.number = number;
+    public User(int _id, String firstName, String lastName, String email, String phone, String externalId, String photo) {
+        this._id = _id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.externalId = externalId;
+        this.photo = photo;
     }
 
-    protected User(int id, String name, String number){
-        this(name, number);
-        this.id = id;
+    public int get_id() {
+        return _id;
     }
 
-    public String getName(){
-        return this.name;
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
-    public String getNumber(){
-        return this.number;
+    public String getFirstName() {
+        return firstName;
     }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+
 }
 

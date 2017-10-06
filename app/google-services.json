@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "631120476316",
+    "project_id": "default-demo-app-158cd"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631120476316:android:db4ac00691dc8fef",
+        "android_client_info": {
+          "package_name": "com.benjios.simplechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631120476316-vmh9q8mn2ijc3c2tee6n6v1gu18l80ki.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "631120476316-qp595m4vjgnsjj1qbu818jgtt72rjr2l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.benjios.simplechat",
+            "certificate_hash": "aff6aedb55b77d66ef59445c4406cd25e2b1720c"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNl5HzF0tq420bUzAezECbrLTMkZ3Jkxs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

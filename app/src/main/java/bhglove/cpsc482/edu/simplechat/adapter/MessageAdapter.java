@@ -2,7 +2,6 @@ package bhglove.cpsc482.edu.simplechat.adapter;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +37,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
             LayoutInflater vi = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             int layout;
 
-            //TODO check shared prefs for primary user id; if sender == user receiver_layout
+            //TODO check shared prefs for primary user _id; if sender == user receiver_layout
             if(message.getSender() % 2 == 0)
                 layout = R.layout.sender_layout;
             else
@@ -49,7 +48,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         }
 
         TextView chat = (TextView) view.findViewById(R.id.chat_content);
-        chat.setText(message.getContent());
+        chat.setText(message.getMessage());
         return view;
     }
 

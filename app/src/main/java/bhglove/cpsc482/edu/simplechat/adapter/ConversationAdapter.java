@@ -31,7 +31,7 @@ public class ConversationAdapter extends ArrayAdapter<Conversation> {
     public ConversationAdapter(Context context, ArrayList<Conversation> conversations) {
         super(context, R.layout.conversation_layout);
         this.mContext = context;
-        this.conversations = conversations;
+        this.conversations = new ArrayList<>();
         Log.d("ConversationAdapter", "Created");
     }
 
@@ -46,14 +46,7 @@ public class ConversationAdapter extends ArrayAdapter<Conversation> {
 
         TextView name = (TextView) view.findViewById(R.id.name);
         TextView date = (TextView) view.findViewById(R.id.date);
-        TextView content = (TextView) view.findViewById(R.id.content);
 
-
-        name.setText(conversations.get(position).getName());
-        date.setText("12/12/16");
-        content.setText(conversations.get(position).getMessage());
-
-        Log.d("ConversationAdapter", "Text set for" + conversations.get(position).getMessage());
         return view;
     }
 
